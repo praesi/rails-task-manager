@@ -1,0 +1,23 @@
+<h2>Awesome TODO list</h2>
+
+    <%= link_to 'Create task', new_todo_path %>
+
+
+
+  <% @todos.each do |todo| %>
+    <p><%= todo.name %></p>
+    <p><%= todo.description %></p>
+    <p><%= todo.done %></p>
+    <%= link_to 'Look at the task', todo_path(todo) %>
+    <%= link_to 'Edit the task', edit_todo_path(todo) %>
+<%end%>
+
+
+
+
+<!--
+Should display a list of all tasks and, for each task:
+a link to its show view (use a link_to helper)
+a link to its edit view
+a link to its delete action. Hint: a standard link does not allow to perform DELETE request, so here you should add a method: :delete option to your link_to helper.
+Should include a link to the new view to create a new task -->
